@@ -1,163 +1,144 @@
-body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-}
-
-#todo-container {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  background: #fff;
+  align-items: center;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-input[type="text"] {
+.container {
+  max-width: 800px;
   width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  backdrop-filter: blur(10px);
 }
 
-button {
-  padding: 10px;
-  background-color: #28a745;
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  color: #333;
+  font-size: 2.5em;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.input-section {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+#todo-input {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right, #6e8efb, #a777e3);
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+#todo-input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(110, 142, 251, 0.3);
+}
+
+.add-btn {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #6e8efb, #a777e3);
   color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.add-btn:hover {
+  transform: translateY(-2px);
+}
+
+.todo-list {
+  list-style: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.todo-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.todo-item.completed {
+  background: rgba(0, 255, 0, 0.1);
+  text-decoration: line-through;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.todo-text {
+  flex: 1;
+  color: #333;
+  font-size: 16px;
+}
+
+.delete-btn {
+  padding: 8px 15px;
   border: none;
   border-radius: 5px;
+  background: #ff4444;
+  color: white;
   cursor: pointer;
-  width: 100%;
-  box-sizing: border-box;
+  transition: all 0.2s ease;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px;
-  margin: 6px 0;
-  background: #f9f9f9;
-  border-radius: 5px;
-  flex-wrap: wrap;
-}
-
-li.completed {
-  text-decoration: line-through;
-  color: gray;
-}
-
-.actions {
-  display: flex;
-  gap: 5px;
-}
-
-.actions button {
-  margin-left: 0;
-  background: #dc3545;
-  width: auto;
-  padding: 8px 12px;
-}
-
-.actions .done-btn {
-  background: #007bff;
+.delete-btn:hover {
+  background: #cc0000;
 }
 
 @media (max-width: 600px) {
-  body {
-    padding: 10px;
+  .container {
+    padding: 20px;
   }
 
-  #todo-container {
-    padding: 15px;
+  .header h1 {
+    font-size: 2em;
   }
 
-  input[type="text"] {
-    padding: 8px;
-  }
-
-  button {
-    padding: 8px;
-  }
-
-  li {
+  .input-section {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
   }
 
-  .actions {
-    width: 100%;
-    justify-content: flex-end;
-  }
-}
-
-@media (max-width: 768px) {
-  #todo-container {
-    max-width: 90%;
-    padding: 15px;
-  }
-
-  input[type="text"] {
-    font-size: 14px;
-  }
-
-  button {
-    font-size: 14px;
-  }
-
-  li {
-    padding: 6px;
-    margin: 4px 0;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  #todo-container {
-    padding: 10px;
-  }
-
-  input[type="text"] {
-    font-size: 12px;
-    padding: 6px;
-  }
-
-  button {
-    font-size: 12px;
-    padding: 6px;
-  }
-
-  li {
-    padding: 5px;
-    margin: 3px 0;
-  }
-
-  .actions {
-    flex-direction: column;
-    gap: 5px;
-    width: 100%;
-  }
-
-  .actions button {
+  .add-btn {
     width: 100%;
   }
 }

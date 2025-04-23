@@ -3,21 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
-    <div id="todo-container">
-        <h2>📝 My Todo List</h2>
-        <input type="text" id="taskInput" placeholder="Enter a new task" />
-        <button id="addTaskBtn">Add</button>
-
-        <ul id="taskList"></ul>
+    <div class="container">
+        <div class="header">
+            <h1>Todo List</h1>
+        </div>
+        <div class="input-section">
+            <input type="text" id="todo-input" placeholder="Add a new task...">
+            <button class="add-btn">Add Task</button>
+        </div>
+        <ul class="todo-list">
+            <!-- Todo items will be added dynamically -->
+        </ul>
     </div>
 
-    <script src="index.js"></script>
+    <script src="index2.js"></script>
 </body>
 
 </html>

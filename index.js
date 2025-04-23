@@ -1,4 +1,4 @@
-const taskInput = document.getElementById("taskInput");
+/* const taskInput = document.getElementById("taskInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
 
@@ -48,3 +48,4 @@ addTaskBtn.addEventListener("click", addTask);
 taskInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") addTask();
 });
+ */
