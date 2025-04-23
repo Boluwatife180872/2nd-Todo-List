@@ -105,3 +105,59 @@ li.completed {
     justify-content: flex-end;
   }
 }
+
+@media (max-width: 768px) {
+  #todo-container {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  input[type="text"] {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+
+  li {
+    padding: 6px;
+    margin: 4px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #todo-container {
+    padding: 10px;
+  }
+
+  input[type="text"] {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  li {
+    padding: 5px;
+    margin: 3px 0;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}
